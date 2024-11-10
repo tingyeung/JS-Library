@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Glide.js CSS for carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
+    <!-- Lightbox2 CSS for image gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2/dist/css/lightbox.min.css">
+
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- FullPage.js CSS for fullscreen scrolling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Icon added here -->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <img src="assets/images/logo.png" alt="Icon" class="header-icon">
+                <h1>Welcome to TY Furniture Store</h1>
+                <p>Find the best price here!</p>
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section id="shop" class="carousel">
+            <h2>Featured Furniture</h2>
+            <div class="glide" id="carousel">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide"><img src="assets/images/furniture1.jpg" alt="Furniture 1"></li>
+                        <li class="glide__slide"><img src="assets/images/furniture2.jpg" alt="Furniture 2"></li>
+                        <li class="glide__slide"><img src="assets/images/furniture3.jpg" alt="Furniture 3"></li>
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="">‹</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery with Lightbox -->
+        <section id="gallery" class="image-gallery">
+            <h2>Our Collection</h2>
+            <div class="gallery">
+                <a href="assets/images/furniture1.jpg" data-lightbox="gallery"><img src="assets/images/furniture1.jpg" alt="Furniture 1"></a>
+                <a href="assets/images/furniture2.jpg" data-lightbox="gallery"><img src="assets/images/furniture2.jpg" alt="Furniture 2"></a>
+                <a href="assets/images/furniture3.jpg" data-lightbox="gallery"><img src="assets/images/furniture3.jpg" alt="Furniture 3"></a>
+                <a href="assets/images/furniture3.jpg" data-lightbox="gallery"><img src="assets/images/furniture4.jpg" alt="Furniture 4"></a>
+                <a href="assets/images/furniture3.jpg" data-lightbox="gallery"><img src="assets/images/furniture5.jpg" alt="Furniture 5"></a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="footer">
+            <p>Contact Us</p>
+            <p>Address: 17 Anndale Drive, North York, Toronto</p>
+            <p>Call us: +1 416 999 1234</p>
+            <p>&copy; 2024 Furniture Store. All rights reserved.</p>
+        </section>
+    </main>
+
+    <!-- FullPage.js, Glide.js, Lightbox, and AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2/dist/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Initialize Libraries -->
+    <script>
+        // AOS Animation
+        AOS.init();
+
+        // FullPage.js Scrolling
+        new fullpage('#fullpage', {
+            anchors: ['home', 'shop', 'gallery', 'contact'],
+            scrollingSpeed: 700
+        });
+
+        // Glide.js Carousel
+        new Glide('#carousel', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 1,
+            focusAt: 'center'
+        }).mount();
+    </script>
+</body>
+
+</html>
